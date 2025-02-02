@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Végétal Design – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Section Logo et Nom de l'entreprise -->
+        <div class="logo">
+          <img src="images/logo.jpg" alt="Logo Végétal Design">
+          <h1><span class="vegetal">CL Végétal</span> <span class="design"> Design</span></h1>
+        </div>
+        <!-- Bouton Menu -->
+        <button id="menu-button" class="menu-button">
+          <span class="menu-text">Menu</span>
+          <!-- L'icône burger sera affichée en mobile -->
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENU : Filtrage et grille d’images -->
+  <div class="content">
+    <h1 class="h1portfolio">~ Nos Réalisations ~</h1>
+    <section id="portfolio">
+      <!-- Boutons de filtre (optionnel si vous voulez ajouter le filtrage) -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="jardin">Jardin</button>
+        <button class="filter-btn" data-filter="terrasse">Terrasse</button>
+        <button class="filter-btn" data-filter="urbain">Aménagement</button>
+      </div>
+  
+      <!-- Grille de réalisations en Masonry -->
+      <div class="masonry-grid">
+        <!-- Exemple d'item. Vous pouvez dupliquer et adapter pour toutes vos images -->
+        <div class="grid-item jardin">
+          <img src="images/portfolio/jardin1.jpg" alt="Projet Jardin 1">
+        </div>
+        <div class="grid-item jardin">
+          <img src="images/portfolio/jardin2.jpg" alt="Projet Jardin 2">
+        </div>
+        <div class="grid-item jardin">
+          <img src="images/portfolio/jardin3.jpg" alt="Projet Jardin 3">
+        </div>
+
+        <div class="grid-item terrasse">
+          <img src="images/portfolio/terrasse1.jpg" alt="Projet Terrasse 1">
+        </div>
+        <div class="grid-item terrasse">
+          <img src="images/portfolio/terrasse2.jpg" alt="Projet Terrasse 2">
+        </div>
+        <div class="grid-item terrasse">
+          <img src="images/portfolio/terrasse3.jpg" alt="Projet Terrasse 3">  
+        </div>
+
+        <div class="grid-item urbain">
+          <img src="images/portfolio/amenagement1.jpg" alt="Projet Urbain 1">  
+        </div>
+        <div class="grid-item urbain">
+          <img src="images/portfolio/amenagement2.jpg" alt="Projet Urbain 2">
+        </div>
+        <div class="grid-item urbain">
+          <img src="images/portfolio/amenagement3.jpg" alt="Projet Urbain 3">
+        </div>
+        <div class="grid-item urbain">
+          <img src="images/portfolio/amenagement4.jpg" alt="Projet Urbain 4">
+        </div>
+        <div class="grid-item urbain">
+          <img src="images/portfolio/amenagement5.jpg" alt="Projet Urbain 5">
+        </div>
+        <div class="grid-item urbain">
+          <img src="images/portfolio/amenagement6.jpg" alt="Projet Urbain 6">
+        </div>
+        <div class="grid-item urbain">
+          <img src="images/portfolio/amenagement7.jpg" alt="Projet Urbain 7">
+        </div>
+        <!-- Ajoutez d'autres items selon vos besoins -->
+      </div>
+    </section>
+  </div>
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container text-center">
+      <div class="row footer-info">
+        <div class="col-12 col-md-4">
+          <p><strong>Adresse :</strong> ZA la banquette, 35290 Saint-Onen-la-Chapelle</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <p><strong>Téléphone :</strong> 02.23.43.85.46</p>
+          <p><strong>Portable :</strong>  07.86.73.38.07</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <p><strong>Email :</strong> contact.vegetaldesign@gmail.com</p>
+        </div>
+      </div>
+      <div class="social-icons my-4">
+        <a href="https://www.facebook.com/profile.php?id=61561295412780&locale=fr_FR" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/vegetaldesign35290/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Végétal Design. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Overlay couvrant toute la page -->
+  <div id="menu-overlay" class="menu-overlay">
+    <!-- Conteneur centré pour le menu -->
+    <div class="menu-container">
+      <nav class="menu-content">
+        <ul class="menu-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Nos Services</a></li>
+          <li><a href="about.html">À Propos</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- GSAP pour des animations fluides -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

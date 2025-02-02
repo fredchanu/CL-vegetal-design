@@ -1,0 +1,676 @@
+/* Réinitialisation et styles de base */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #222222;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1; /* Permet au contenu de prendre tout l'espace disponible */
+}
+
+/* Titres avec Playfair Display */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 ,h3 {
+  font-style: italic;
+}
+
+/* Palette de couleurs */
+.primary { color: #4CAF50; }
+.secondary { color: #222222; }
+.light { color: #FFFFFF; }
+.gray-wood { color: #888888; }
+
+/* HEADER & MENU */
+.main-header {
+  background: linear-gradient(135deg, #222222, #4CAF50);
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Flexbox pour l'intérieur du header --- */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Logo et Nom de l'entreprise --- */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.vegetal {
+  font-family: 'Dancing Script', cursive;
+  color: #4CAF50; /* Vert */
+}
+
+.design {
+  font-family: 'Playfair Display', serif; 
+  color: #222222; 
+  font-style: italic;
+}
+
+/* --- Bouton Menu classique --- */
+.menu-button {
+  background: transparent;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+  font-family: 'Playfair Display', serif; 
+  font-style: italic;
+}
+
+.menu-button:hover {
+  background: #fff;
+  color: #222;
+}
+
+/* Par défaut, on affiche le texte et on masque l'icône burger */
+.menu-text {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* --- Menu overlay dans un rectangle avec fond transparent & effet de flou --- */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Fond transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: none; /* Masqué par défaut */
+  pointer-events: auto;
+}
+/* Conteneur du menu centré dans l'overlay */
+.menu-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background: rgba(34, 34, 34, 0.8);
+  border-radius: 12px;
+  padding: 30px;
+}
+/* Liste du menu */
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.menu-list li {
+  margin: 15px 0;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: #4CAF50; /* Texte vert par défaut */
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family: 'Playfair Display', serif; 
+}
+
+.menu-list li a:hover {
+  color: #888888; /* Passe au gris au survol */
+}
+
+/* ---------- Carousel (Desktop) ---------- */
+.carousel {
+  width: 100%;
+  height: 100vh;         /* Pleine hauteur de la fenêtre */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* Pour grands écrans */
+@media (min-width: 1200px) {
+  .carousel {
+    height: 80vh;
+  }
+}
+
+/* Pour écrans moyens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .carousel {
+    height: 100vh;
+  }
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
+/* L'overlay du carousel (visible sur desktop) */
+.carousel-caption {
+  bottom: 20%;
+}
+
+/* ---------- Version Mobile ---------- */
+.hero-mobile {
+  display: none; /* Par défaut, masqué pour desktop */
+}
+
+.hero-mobile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-mobile-caption {
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-title-mobile {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.btn-cta-mobile {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-cta-mobile:hover {
+  background-color: #222;
+  color: #fff;
+  transform: scale(1.05);
+}
+/* ---------- Media Queries ---------- */
+/* Pour petits écrans : afficher la version mobile et adapter le carousel */
+@media (max-width: 576px) {
+  /* Masquer le carousel */
+  #hero-carousel {
+    display: none;
+  }
+  /* Afficher la version mobile */
+  .hero-mobile {
+    display: block;
+  }
+}
+
+/* Section Hero */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.hero-title {
+  font-size: 3rem;
+  animation: fadeInUp 1s ease forwards;
+  display: flex;
+  flex-direction: column; /* Force les éléments à s'empiler */
+  align-items: center; /* Centre horizontalement */
+}
+.btn-cta {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  border: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.btn-cta:hover {
+  background-color: #222222;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Cartes de services */
+.service-card {
+  transition: transform 0.3s, filter 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  filter: brightness(1.1);
+}
+.service-icon {
+  font-size: 3rem;
+}
+
+/* style page a propos */
+.a-propos {
+  color: #4CAF50;
+  font-style: italic;
+  font-family: 'Playfair Display', serif; 
+}
+.image-team {
+  border-radius: 14px;
+}
+
+/*style page portfolio */
+#portfolio {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.h1portfolio {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+/* Boutons de filtre */
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.filter-btn.active {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.filter-btn:hover {
+  background: #bbb;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 20px;
+}
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+/* Chaque item de la grille */
+.grid-item {
+  background: #fff;
+  margin-bottom: 20px;
+  display: inline-block; /* Nécessaire pour les colonnes */
+  width: 100%;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.grid-item:hover {
+  transform: scale(1.03);
+}
+
+.grid-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none; /* Masqué par défaut */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.lightbox-caption {
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+  color: #bbb;
+}
+
+/*page formulaire*/
+/* Formulaire de contact */
+form#contactForm {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Groupes de champs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+/* Champs de saisie */
+.form-control,
+.form-control-file,
+textarea.form-control {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+/* Effet focus sur les champs */
+.form-control:focus,
+textarea.form-control:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Pour le champ de fichier */
+.form-control-file {
+  padding: 3px;
+}
+
+/* Bouton d'envoi */
+.btn.btn-cta {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn.btn-cta:hover {
+  background-color: #222222;
+  transform: scale(1.02);
+}
+
+/* Message de confirmation */
+.alert {
+  max-width: 600px;
+  margin: 20px auto 0;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Style pour le message de succès */
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* ------------------------- */
+/*   Conteneur Contact Page  */
+/* ------------------------- */
+
+/* Conteneur pour le formulaire et la carte */
+.contact-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Formulaire de contact */
+.contact-form {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Carte de localisation */
+.contact-map {
+  flex: 1;
+  min-height: 600px;         /* Hauteur minimale pour être sûr que la carte s'affiche */
+  margin: 20px auto;         /* Centre le conteneur */
+  max-width: 100%;
+  position: relative;
+}
+
+/* Conteneur responsive pour l'iframe de la carte */
+.map-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Ratio 16:9 par défaut */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ------------------------- */
+/*      Responsive CSS       */
+/* ------------------------- */
+
+/* Pour petits écrans (max-width: 576px) */
+@media (max-width: 576px) {
+  form#contactForm {
+    padding: 20px;
+  }
+  .btn.btn-cta {
+    width: 100%;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-map {
+    min-height: 300px;
+    width: 100%;
+  }
+  /* On peut ajuster le ratio pour la carte si besoin */
+  .map-responsive {
+    padding-bottom: 75%;
+  }
+}
+
+/* Style modernisé du footer */
+.footer {
+  background: linear-gradient(135deg, #222222, #4CAF50);
+  color: #fff;
+  
+  
+  margin-top: 0;
+  padding-top: 0;
+  
+}
+.footer-info p, .footer-info a {
+  color: #fff;
+  margin: 5px 0;
+}
+.footer-info p {
+  font-size: 0.95rem;
+}
+.social-icons a {
+  font-size: 1.7rem;
+  margin: 0 10px;
+  transition: transform 0.3s, color 0.3s;
+  color: #fff;
+}
+.social-icons a:hover {
+  transform: scale(1.1);
+  color: #222222;
+}
+.footer-bottom p {
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Effet parallax pour les images */
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+}
+.parallax-image {
+  width: 100%;
+  transition: transform 0.5s ease-out;
+}
+
+
+/* --- Responsive adjustments --- */
+
+/* Tablette */
+@media (max-width: 768px) {
+  #menu-logo {
+    max-width: 70px;
+  }
+  .company-name {
+    font-size: 1.75rem;
+  }
+  .menu-content .nav-link {
+    font-size: 1.3rem;
+  }
+  .menu-list li a {
+    font-size: 1.3rem;
+  }
+  .portfolio-image {
+    height: 200px;  /* Réduisez la hauteur pour s'adapter aux écrans moyens */
+  }
+}
+
+/* Smartphone */
+@media (max-width: 576px) {
+  .main-header {
+    padding: 10px 0;
+  }
+  .company-name {
+    font-size: 1.5rem;
+  }
+  .menu-overlay {
+    width: 100%;
+    padding: 20px;
+  }
+  .menu-list li a {
+    font-size: 1.3rem;
+  }
+  .menu-text {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+  }
+
+  /* Création des deux traits supplémentaires pour former le burger */
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    left: 0;
+  }
+  .menu-icon::before {
+    top: -8px;
+  }
+  .menu-icon::after {
+    top: 8px;
+  }
+}
+/* Adaptation mobile */
+@media (max-width: 576px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
