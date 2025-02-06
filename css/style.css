@@ -674,3 +674,34 @@ textarea.form-control:focus {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
+/* Conteneur de la galerie */
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Chaque item de la galerie */
+.gallery-item {
+  flex: 1 1 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Pour les images */
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Style de la section avant-après */
+.before-after {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
