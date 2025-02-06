@@ -11,6 +11,8 @@ collections:
     folder: "content/avantapres"  # dossier où seront stockés les fichiers
     create: true
     slug: "{{slug}}"
+    extension: "json"       # Génère des fichiers avec l'extension .json
+    format: "json"          # Utilise le format JSON au lieu de Markdown
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Image Avant", name: "imageAvant", widget: "image" }
