@@ -42,6 +42,30 @@
         <button class="filter-btn" data-filter="urbain">Aménagement</button>
       </div>
   
+      <div id="gallery"></div>
+
+<script>
+  fetch('/data/avantapres.json')
+    .then(response => response.json())
+    .then(data => {
+      const galleryContainer = document.getElementById('gallery');
+      data.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        div.innerHTML = `
+          <h2>${item.title}</h2>
+          <div class="before-after">
+            <img src="${item.imageAvant}" alt="Avant">
+            <img src="${item.imageApres}" alt="Après">
+          </div>
+          ${item.description ? `<p>${item.description}</p>` : ''}
+        `;
+        galleryContainer.appendChild(div);
+      });
+    })
+    .catch(err => console.error('Erreur lors du chargement de la galerie:', err));
+</script>
+
       <!-- Grille de réalisations en Masonry -->
       <div class="masonry-grid">
         <!-- Exemple d'item. Vous pouvez dupliquer et adapter pour toutes vos images -->
