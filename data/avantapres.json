@@ -1,11 +1,3 @@
 {
-  "entries": [
-    {
-      "item": {
-        "imageAvant": "/static/images/uploads/img(1).jpg",
-        "imageApres": "/static/images/uploads/img(2).jpg",
-        "title": "constrution"
-      }
-    }
-  ]
+  "entries": []
 }
