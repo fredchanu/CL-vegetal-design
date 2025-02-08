@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Fredchanu/CL-végétal-design  # Remplace par ton dépôt GitHub
   branch: main
 
 media_folder: "static/images/uploads"
