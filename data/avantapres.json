@@ -2,8 +2,8 @@
   "entries": [
     {
       "item": {
-        "imageAvant": "/images/uploads/event1.jpg",
-        "imageApres": "/images/uploads/hero5.jpg",
+        "imageAvant": "/static/images/uploads/img(1).jpg",
+        "imageApres": "/static/images/uploads/img(2).jpg",
         "title": "constrution"
       }
     }

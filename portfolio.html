@@ -44,40 +44,39 @@
   
       <div id="gallery"></div>
 
-<script>
-  fetch('/data/avantapres.json')
-    .then(response => response.json())
-    .then(data => {
-      const galleryContainer = document.getElementById('gallery');
-      data.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'gallery-item';
-        div.innerHTML = `
-          <h2>${item.title}</h2>
-          <div class="before-after">
-            <img src="${item.imageAvant}" alt="Avant">
-            <img src="${item.imageApres}" alt="Après">
-          </div>
-          ${item.description ? `<p>${item.description}</p>` : ''}
-        `;
-        galleryContainer.appendChild(div);
-      });
-    })
-    .catch(err => console.error('Erreur lors du chargement de la galerie:', err));
-</script>
-
+      <script>
+        fetch('/data/avantapres.json')
+          .then(response => response.json())
+          .then(data => {
+            const galleryContainer = document.getElementById('gallery');
       
-        
-
+            data.entries.forEach((entry, index) => {
+              const item = entry.item;
+      
+              const div = document.createElement('div');
+              div.className = 'gallery-item';
+              div.innerHTML = `
+                <h2>${item.title}</h2>
+                <div id="slider-${index}" class="juxtapose"></div>
+              `;
+              galleryContainer.appendChild(div);
+      
+              // Ajouter le slider
+              new juxtapose.JXSlider(`#slider-${index}`, [
+                { src: item.imageAvant, label: "Avant" },
+                { src: item.imageApres, label: "Après" }
+              ], {
+                showLabels: true,
+                animate: true,
+                startingPosition: "50%",
+                makeResponsive: true
+              });
+            });
+          })
+          .catch(error => console.error('Erreur lors du chargement du JSON:', error));
+      </script>
         
   
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-</div>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container text-center">
@@ -123,7 +122,8 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- GSAP pour des animations fluides -->
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+  <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   <script src="js/script.js"></script>
 
