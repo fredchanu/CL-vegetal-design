@@ -2,10 +2,18 @@
   "entries": [
     {
       "item": {
-        "title": "Aménagement cour",
+        "title": "Aménagement cours",
         "imageAvant": "/images/uploads/img (1).jpg",
         "imageApres": "/images/uploads/img (2).jpg",
-        "description": "cour chez un client"
+        "description": "cours chez un client"
+      }
+    },
+    {
+      "item": {
+        "title": "Pose portail",
+        "imageAvant": "/images/uploads/portail.jpg",
+        "imageApres": "/images/uploads/portail-1.jpg",
+        "description": "pose d'un portail et d'une cloture"
       }
     }
   ]
