@@ -3,8 +3,8 @@
     {
       "item": {
         "title": "Aménagement cour",
-        "imageAvant": "/images/uploads/img (1).jpg",
-        "imageApres": "/images/uploads/img (2).jpg",
+        "imageAvant": "/static/images/uploads/img (1).jpg",
+        "imageApres": "/static/images/uploads/img (2).jpg",
         "description": "cour chez un client"
       }
     }
