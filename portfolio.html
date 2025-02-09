@@ -49,8 +49,13 @@
               const div = document.createElement('div');
               div.className = 'gallery-item';
               div.innerHTML = `
-                <h2>${item.title}</h2>
-                <div id="slider-${index}" class="juxtapose"></div>
+                  <div class="portfolio-card">
+                    <h2 class="portfolio-title">${item.title}</h2>
+                    <div class="portfolio-content">
+                      <div id="slider-${index}" class="juxtapose"></div>
+                     ${item.description ? `<p class="portfolio-description">${item.description}</p>` : ''}
+                    </div>
+                  </div>
               `;
               galleryContainer.appendChild(div);
       
