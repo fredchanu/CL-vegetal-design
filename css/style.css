@@ -474,12 +474,11 @@ textarea.form-control:focus {
   font-size: 1.7rem;
   margin: 0 10px;
   transition: transform 0.3s, color 0.3s;
-  color: #fff;
-}
-.social-icons a:hover {
-  transform: scale(1.1);
   color: #222222;
+  text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00;
+  animation: neonGlow 1.5s infinite alternate; /* Effet pulsant */
 }
+
 .footer-bottom p {
   font-size: 0.9rem;
   margin-top: 20px;
