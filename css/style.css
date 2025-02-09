@@ -607,6 +607,31 @@ textarea.form-control:focus {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding-bottom: 10px; /* Pour laisser de la place au laser */
+  overflow: visible; /* Pour éviter que le laser dépasse */
+}
+/* Effet laser animé sous le titre */
+.portfolio-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Position sous le texte */
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(0, 255, 0, 0) 0%, #00FF00 50%, rgba(0, 255, 0, 0) 100%);
+  animation: laser-move 2s linear infinite;
+  background-size: 200% auto;
+}
+
+/* Animation du laser */
+@keyframes laser-move {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 
 /* Conteneur du slider et de la description */
